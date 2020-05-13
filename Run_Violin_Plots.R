@@ -1,5 +1,5 @@
 ####### ALL SIMULATION RESULTS
-setwd("~/Prelim/myCode")
+setwd("~/Stat572")
 source("atom_mcmc.R")		
 source("beta_mcmc.R")
 source("generate_nus.R")
@@ -20,7 +20,7 @@ b0 = 1/4
 sb = 0.2 
 sa = 0.2 
 s = c(0.05, 0.05, 0.05)
-set.seed(111)
+set.seed(900)
 for (j in 1:NROW(NU)) {
   n <- rmultinom(1,N,NU[j,]) ## Data realization!!!
   resBeta <- betamix_me(n, real_alpha, sb, sa, a0, b0, nmc)
