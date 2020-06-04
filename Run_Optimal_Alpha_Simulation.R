@@ -32,7 +32,7 @@ genTrue <- function(a,b) {
 ## then computing Nhat_alpha for all the desired values of alpha
 oneRep <- function(a,b, alphas) {
   try1 <- try({
-  Nhat <- rep(0, length(alpha)+1)
+  Nhat <- rep(0, length(alphas)+1)
   observed <- genTrue(a,b)
   guess <- optim(par=c(1,1), fn=conditionalLik, n=observed, lower=0.00001, upper=1000,
                  method="L-BFGS-B")$par
@@ -121,7 +121,7 @@ p3 <- ggplot(data=plot3, aes(x=alpha, y = biassq, col="Bias^2")) + geom_line() +
 
   #geom_line(aes(x=alpha, y=(mean-500)^2, col="empiricalbias"))
 
-png("~/Prelim/myCode/results/alpha_opt.png", width=700, height=400)
+png("~/Stat572/alpha_opt.png", width=700, height=400)
 gridExtra::grid.arrange(p1,p2,p3, nrow=1, widths=c(2,2,2.5))
 dev.off()
 
