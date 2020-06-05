@@ -161,9 +161,9 @@ p10 <- ggplot(resAtom2,aes(x=variable,y=value)) +
           plot.title = element_text(size = 10))
 
 #### MAKE VIOLIN PLOT!!!!!!! FIGURE 4
-#png('MYVIOLIN.png',width=800,height=550)
-ggsave(file="MYVIOLIN.png", grid.arrange(p1,p3,p5,p7,p9,p2,p4,p6,p8,p10, nrow=2))
-#dev.off()
+png('MYVIOLIN.png',width=880,height=550)
+grid.arrange(p1,p3,p5,p7,p9,p2,p4,p6,p8,p10, nrow=2)
+dev.off()
 
 
 png('MYVIOLIN_PARTIAL.png',width=800,height=450)
